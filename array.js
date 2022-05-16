@@ -153,6 +153,7 @@ console.log(createRandomArr(10, 5, 33));
  * @returns {number}
  */
 const avg = function (arr) {
+  if (arr.length === 0) return 0;
   return arr.reduce((accumulator, current) => accumulator + current) / arr.length;
 }
 console.log(avg([12, 15, 20, 25, 59, 79]));
