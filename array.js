@@ -136,12 +136,10 @@ const hasTwoIdenticalNumbersTogether = function (arr) {
  * @returns {array}
  */
 const createRandomArr = function (size, min, max) {
-  const arr = [];
   min = Math.ceil(min);
   max = Math.floor(max);
-  for (let i = 0; i < size; i++) {
-    arr.push(Math.floor(Math.random() * (max - min + 1)) + min)
-  }
+  const arr = Array(size).fill(0);
+  arr.forEach((e, i, arr) => arr[i] = Math.floor(Math.random() * (max - min + 1)) + min);
   return arr;
 }
 console.log(createRandomArr(10, 5, 33));
